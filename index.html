@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Git Tac Toe</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 32px 16px 48px;
+      background: #f4f6fa;
+      color: #16243a;
+      font-family: system-ui, sans-serif;
+      text-align: center;
+    }
+    main { max-width: 780px; margin: 0 auto; }
+    h1 { margin: 0 0 8px; font-size: clamp(2rem, 7vw, 3.5rem); }
+    p { margin: 0 auto 24px; max-width: 620px; line-height: 1.6; }
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      width: min(100%, 660px);
+      margin: 0 auto 28px;
+      padding: 8px;
+      background: #16243a;
+      border-radius: 16px;
+    }
+    .cell {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+      aspect-ratio: 1;
+      border-radius: 6px;
+      background: #fff;
+      color: #234bc4;
+      font-size: clamp(2.5rem, 16vw, 8rem);
+      font-weight: 800;
+      line-height: 1;
+    }
+    .cell::before {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: #526079;
+      font-size: clamp(0.75rem, 2.5vw, 1rem);
+      font-weight: 600;
+    }
+    #cell-a1::before { content: "A1"; }
+    #cell-a2::before { content: "A2"; }
+    #cell-a3::before { content: "A3"; }
+    #cell-b1::before { content: "B1"; }
+    #cell-b2::before { content: "B2"; }
+    #cell-b3::before { content: "B3"; }
+    #cell-c1::before { content: "C1"; }
+    #cell-c2::before { content: "C2"; }
+    #cell-c3::before { content: "C3"; }
+    .instructions { padding: 24px; background: #fff; border-radius: 16px; }
+    h2 { margin: 0 0 12px; font-size: 1.25rem; }
+    .instructions p:last-child { margin-bottom: 0; }
+    code { font-size: 0.95em; overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Git Tac Toe</h1>
+    <p>One move. One commit. Take turns adding an X or O to the HTML, then share your move with Git.</p>
+    <div class="board" role="group" aria-label="Tic-tac-toe board: rows A to C, columns 1 to 3">
+      <!-- MAKE YOUR MOVE: put X or O between the tags of one empty cell. -->
+      <div class="cell" id="cell-a1"></div>
+      <div class="cell" id="cell-a2"></div>
+      <div class="cell" id="cell-a3"></div>
+      <div class="cell" id="cell-b1"></div>
+      <div class="cell" id="cell-b2"></div>
+      <div class="cell" id="cell-b3"></div>
+      <div class="cell" id="cell-c1"></div>
+      <div class="cell" id="cell-c2"></div>
+      <div class="cell" id="cell-c3"></div>
+    </div>
+    <section class="instructions" aria-labelledby="how-to-play">
+      <h2 id="how-to-play">Make a move in your editor</h2>
+      <p>This is a static board: clicking a square does nothing. Open <code>index.html</code> in your text editor, find an empty cell by its ID, and insert your X or O between its tags. Rows run A to C from top to bottom; columns run 1 to 3 from left to right.</p>
+      <p>For example: <code>&lt;div class="cell" id="cell-a1"&gt;X&lt;/div&gt;</code></p>
+      <p>Save the file and refresh your browser. Follow the workshop's Git steps to add, commit, and push your move. Pull the latest moves before your next turn.</p>
+    </section>
+  </main>
+</body>
+</html>
